@@ -30,7 +30,7 @@ jobs:
       - name: Run npm install, build
         run: |
           npm install
-          npm build
+          npm run build
 
       # create a new git repository and add all files
       - name: Configure repo
