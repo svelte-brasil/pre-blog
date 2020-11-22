@@ -1,10 +1,18 @@
-import svelte from 'rollup-plugin-svelte';
-import resolve from 'rollup-plugin-node-resolve';
+import alias from '@rollup/plugin-alias';
+import json from '@rollup/plugin-json';
+import path from 'path';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
+import resolve from 'rollup-plugin-node-resolve';
+import svelte from 'rollup-plugin-svelte';
 import { terser } from 'rollup-plugin-terser';
 
+
 const production = !process.env.ROLLUP_WATCH;
+
+const customResolver = resolve({
+  extensions: ['.mjs', '.js', '.svelte', '.scss'],
+})
 
 export default {
 	input: 'src/main.js',
@@ -15,13 +23,23 @@ export default {
 		file: 'public/bundle.js'
 	},
 	plugins: [
+    alias({
+      entries: [
+        {
+          find: '@src',
+          replacement: path.resolve(__dirname, 'src'),
+        },
+      ],
+      customResolver,
+    }),
+    json(),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
 			// we'll extract any component CSS out into
 			// a separate file — better for performance
 			css: css => {
-				css.write('public/bundle.css');
+				css.write('bundle.css');
 			}
 		}),
 

@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #fe480f;
+  --secondary-color: #ff8a65;
+  --green-color: #6ecb44;
+  --yellow-color: #ffba29;
+  --red-color: #f15856;
+
+  --m96: 6em;
+  --m32: 2em;
+  --m18: 1.125em;
+  --m24: 1.5em;
+  --m16: 1em;
+  --m15: 0.9375em;
+  --m14: 0.875em;
+  --m13: 0.8125em;
+  --m12: 0.75em;
+  --m11: 0.6875em;
+  --m10: 0.625em;
+  --m9: 0.5625em;
+  --m8: 0.5em;
+  --m7: 0.4375em;
+  --m6: 0.375em;
+  --m5: 0.3125em;
+  --m4: 0.25em;
+  --m3: 0.1875em;
+  --m2: 0.125em;
+  --m1: 0.0625em;
+}
