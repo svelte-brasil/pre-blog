@@ -62,6 +62,10 @@
   }
 
   @media (max-width: 960px) {
+    header > h1 {
+      padding-left: 10px;
+      letter-spacing: 1.5px;
+    }
     .container {
       width: 100vw;
       padding: 10px;
