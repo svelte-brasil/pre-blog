@@ -25,6 +25,7 @@
   header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     border: 4px solid var(--primary-color);
     color: var(--primary-color);
     box-shadow: calc(var(--m10) * -1) var(--m10) var(--m5) rgba(0, 0, 0, 0.3);
