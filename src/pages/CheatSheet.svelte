@@ -63,6 +63,7 @@
   @media (max-width: 960px) {
     .container {
       width: 100vw;
+      padding: 10px;
     }
 
     .container > :global(.card) {
