@@ -5,9 +5,15 @@
 
   let component = Home
 
+  if (location.href.includes('cheat')) {
+    component = CheatSheet
+  }
+
   window.addEventListener('popstate', function (event) {
     if (location.href.includes('cheat')) {
       component = CheatSheet
+    } else {
+      component = Home
     }
   })
 </script>
