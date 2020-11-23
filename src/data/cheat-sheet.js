@@ -1,10 +1,48 @@
 export const cheatSheet = [
   {
+    title: "svelte_component",
+    content: [
+`<!-- Widget.svelte -->
+<script>
+  export let textValue
+</script>
+
+<div class="container">
+  {textValue}
+</div>
+
+<style>
+.container {
+  color: blue;
+}
+</style>
+
+<!-- App.svelte -->
+<script>
+  import Widget from './Widget.svelte'
+  const title = 'App'
+</script>
+
+<header>{title}</header>
+
+<Widget textValue="I'm a svelte component" />
+`
+    ]
+  },
+  {
   title: "expressions",
   content: [
+`<script>
+    let isShowing = true
+    let cat = 'cat'
+</script>
+
+`,
     '<p>2 + 2 = {2 + 2}</p>',
     ' ',
-    '<p>{isShowing ? `NOW YOU SEE ME` : `NOW YOU DON ́T SEE ME`}</p>',
+`<p>
+  {isShowing ? 'NOW YOU SEE ME' : 'NOW YOU DON ́T SEE ME'}
+</p>`,
     ' ',
     '<p>My e-mail is {email}</p>',
     ' ',
@@ -26,10 +64,14 @@ export const cheatSheet = [
     export let color = ''
 </script>
 
-<a href={href} style={\`color: \${color}\`} >{title}</a>`,
+<a href={href} style={\`color: \${color}\`} >
+  {title}
+</a>`,
 ` `,
 '::shorthand',
-`<a {href} style={\`color: \${color}\`} >{title}</a>
+`<a {href} style={\`color: \${color}\`} >
+  {title}
+</a>
 
 <script>
   import MyLink from "./components/MyLink";
@@ -72,7 +114,7 @@ export const cheatSheet = [
   myDiv.innerText = 'My text'
 </script>
 
-<div bind:this={myDiv}></div>
+<div bind:this={myDiv}/>
 `
   ]
   },
@@ -163,12 +205,16 @@ export const cheatSheet = [
 
 //INDEX
 {#each items as item, index}
-  <li>{index + 1}: {item.name} x {item.qty}</li>
+  <li>
+    {index + 1}: {item.name} x {item.qty}
+  </li>
 {/each}
 
 //INDEX                       (KEY)
 {#each items as item, index (item.id)}
-  <li>{index + 1}: {item.name} x {item.qty}</li>
+  <li>
+    {index + 1}: {item.name} x {item.qty}
+  </li>
 {/each}
 `
   ]
@@ -176,7 +222,7 @@ export const cheatSheet = [
   {
   title: "using_slot",
   content: [
-`<!-- Widget.svelte --> <!-- These are equivalent -->
+`<!-- Widget.svelte -->
 <div>
   <slot>Default content</slot>
 </div>
@@ -194,17 +240,23 @@ export const cheatSheet = [
   content: [
 `<!-- Widget.svelte -->
 <div>
-  <slot name="header">No header was provided</slot>
+  <slot name="header">
+    No header was provided
+  </slot>
+
   <slot>
     <p>Some content between header and footer</p>
   </slot>
+
   <slot name="footer" />
 </div>
 
 <!-- App.svelte -->
 <Widget>
   <h1 slot="header">Hello</h1>
-  <p slot="footer">Copyright (c) 2020 Svelte Brazil</p>
+  <p slot="footer">
+    Copyright (c) 2020 Svelte Brazil
+  </p>
 </Widget>
 
 <!-- FancyList.svelte -->
@@ -218,7 +270,9 @@ export const cheatSheet = [
 
 <!-- App.svelte -->
 <FancyList {items}>
-  <div slot="item" let:item>{item.text}</div>
+  <div slot="item" let:item>
+    {item.text}
+  </div>
 </FancyList>
 `
 ]
@@ -239,7 +293,12 @@ onMount(() => {
 
 `,
     '::lifecycle',
-    '[onMount, beforeUpdate, afterUpdate, onDestroy]'
+`[
+  onMount(() => {}),
+  beforeUpdate(() => {}),
+  afterUpdate(() => {}),
+  onDestroy(() => {})
+]`
   ]
   },
   {

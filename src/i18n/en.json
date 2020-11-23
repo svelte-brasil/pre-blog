@@ -24,5 +24,6 @@
   "reactive_expressions": "Reactive expressions",
   "reactive_statement": "Reactive statement",
   "element_binding": "HTML element binding",
-  "re_render": "Rerender when the value change"
+  "re_render": "Rerender when the value change",
+  "svelte_component": "Svelte Component"
 }

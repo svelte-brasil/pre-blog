@@ -24,5 +24,6 @@
   "reactive_expressions": "Expressoes reativas",
   "reactive_statement": "Declaração reativa",
   "element_binding": "Vínculo com um elemento HTML",
-  "re_render": "Renderiza novamente quando o valor muda"
+  "re_render": "Renderiza novamente quando o valor muda",
+  "svelte_component": "Componente Svelte"
 }
