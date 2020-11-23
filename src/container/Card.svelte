@@ -26,6 +26,7 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 48px;
   }
 
@@ -61,7 +62,7 @@
 
   @media (max-width: 484px) {
     header > h2 {
-      font-size: 1.2em;
+      font-size: 0.9em;
     }
   }
 </style>
