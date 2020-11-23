@@ -3,18 +3,10 @@
   import CheatSheet from './pages/CheatSheet.svelte'
   import Home from './pages/Home.svelte'
 
-  let component = Home
-
-  if (location.href.includes('cheat')) {
-    component = CheatSheet
-  }
+  let component = location.href.includes('cheat') ? CheatSheet : Home
 
   window.addEventListener('popstate', function (event) {
-    if (location.href.includes('cheat')) {
-      component = CheatSheet
-    } else {
-      component = Home
-    }
+    component = location.href.includes('cheat') ? CheatSheet : Home
   })
 </script>
 
