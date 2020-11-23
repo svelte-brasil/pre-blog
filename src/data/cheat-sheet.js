@@ -346,6 +346,8 @@ onMount(() => {
   content: [
 `<script>
   import { fade } from "svelte/transition";
+
+  export let condition;
 </script>
 
 {#if condition}
