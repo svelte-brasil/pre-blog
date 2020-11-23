@@ -62,7 +62,7 @@
 
   @media (max-width: 484px) {
     header > h2 {
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
   }
 </style>
