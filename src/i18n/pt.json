@@ -26,5 +26,6 @@
   "element_binding": "Vínculo com um elemento HTML",
   "re_render": "Renderiza novamente quando o valor muda",
   "svelte_component": "Componente Svelte",
-  "learn": "Aprenda conosco"
+  "learn": "Aprenda conosco",
+  "match_class": "Quando o nome da propriedade é igual o nome da classe"
 }

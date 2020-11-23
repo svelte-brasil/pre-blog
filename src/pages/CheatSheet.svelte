@@ -5,7 +5,7 @@
 </script>
 
 <header>
-  <div class="logo" on:click={() => (location.href = '/')}>
+  <div class="logo" on:click={() => (location.href = '#')}>
     <img src="img/svelte-brasil.jpeg" alt="Svelte Brasil" />
   </div>
   <h1>Svelte Brasil - {$_('cheat_sheet')}</h1>

@@ -153,9 +153,13 @@ export const cheatSheet = [
   {
   title: "render",
   content: [
-`{@html '<div>'}
-{@html '</div>'}
-{@html expression}
+`<scrit>
+  var myHtml = '<span><strong>My text:</strong> text</span>'
+</scrit>
+
+{@html '<div>Content</div>'}
+
+{@html myHtml}
 `
   ]
   },
@@ -236,7 +240,7 @@ export const cheatSheet = [
   ]
   },
   {
-  title: "class_binding",
+  title: "multiple_slot",
   content: [
 `<!-- Widget.svelte -->
 <div>
@@ -275,7 +279,26 @@ export const cheatSheet = [
   </div>
 </FancyList>
 `
-]
+    ]
+  },
+  {
+    title: "class_binding",
+    content: [
+`<script>
+   export let type = 'normal'
+   export let active = true
+</script>
+
+<div class={active ? active : ''}  class={type}>...</div>
+
+<div class:active={active} class={\`otherClass \${type}\`}>...</div>
+
+`,
+'::match_class',
+`
+<div class:active>...</div>
+`
+    ]
   },
   {
   title: "lifecycle",
