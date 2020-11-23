@@ -24,15 +24,18 @@
       <ul class="info-social">
         {#each socials as social}
           <li class="info-social__item">
-            <a
-              href={social.link}
-              title={social.self ? $_('quick_tutorial') : `Ir para o ${social.label}`}
-              target={social.self ? '_self' : '_blank'}>
+            <a href={social.link} title={social.label} target="_blank">
               <img src={social.iconPath} alt={`ícone do ${social.label}`} />
             </a>
           </li>
         {/each}
       </ul>
+      <div class="learning">
+        <a href="#/cheat">
+          <img src="/img/icons/open-book.svg" alt="aprenda" />
+          <span>{$_('cheat_sheet')}</span>
+        </a>
+      </div>
     </div>
     <div class="illustration">
       <img
@@ -117,6 +120,18 @@
 
   .illustration > img {
     width: 90%;
+  }
+
+  .learning > a {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+
+  a > span {
+    margin-left: 10px;
   }
 
   @media screen and (max-width: 860px) {

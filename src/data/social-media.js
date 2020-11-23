@@ -29,10 +29,4 @@ export const socials = [
     link: 'http://bit.ly/svelte-brasil-slack',
     iconPath: '/img/icons/slack.svg',
   },
-  {
-    label: 'Aprenda',
-    link: '#/cheat',
-    iconPath: '/img/icons/open-book.svg',
-    self: true,
-  },
 ]
