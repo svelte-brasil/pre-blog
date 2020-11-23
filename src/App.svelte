@@ -3,7 +3,6 @@
   import CheatSheet from './pages/CheatSheet.svelte'
   import Home from './pages/Home.svelte'
 
-  //let component = Home
   let component = Home
 
   window.addEventListener('popstate', function (event) {
@@ -18,7 +17,3 @@
 {:else}
   <svelte:component this={component} />
 {/if}
-
-<style>
-  /* your styles go here */
-</style>
