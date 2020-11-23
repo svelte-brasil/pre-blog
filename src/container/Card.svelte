@@ -58,4 +58,10 @@
     font-size: var(--m18);
     color: var(--secondary-color);
   }
+
+  @media (max-width: 484px) {
+    header > h2 {
+      font-size: 1.2em;
+    }
+  }
 </style>
