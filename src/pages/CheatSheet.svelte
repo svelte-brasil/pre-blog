@@ -23,18 +23,23 @@
 
 <style>
   header {
+    position: fixed;
+    top: 0;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     border: 4px solid var(--primary-color);
     color: var(--primary-color);
     box-shadow: calc(var(--m10) * -1) var(--m10) var(--m5) rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    background-color: #fff;
+    height: 100px;
   }
 
   header > .logo {
     cursor: pointer;
     height: var(--m96);
     padding: 0;
+    height: 100%;
   }
 
   .logo > img {
@@ -52,6 +57,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    padding-top: 120px;
   }
 
   .container > :global(.card) {
@@ -69,10 +75,17 @@
     .container {
       width: 100vw;
       padding: 10px;
+      padding-top: 120px;
     }
 
     .container > :global(.card) {
       width: 95%;
+    }
+  }
+
+  @media (max-width: 615px) {
+    header h1 {
+      font-size: 1.25rem;
     }
   }
 </style>
