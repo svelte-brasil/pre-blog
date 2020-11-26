@@ -16,7 +16,7 @@
 
 <style>
   .card {
-    box-shadow: -5px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
   }
 
   .card > header {
