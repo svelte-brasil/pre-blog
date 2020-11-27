@@ -38,8 +38,8 @@ jobs:
           rm -rf .git
           git init
           git add -f docker-compose.yml
-          git add -f bundle.css
-          git add -f bundle.js
+          git add -f public/bundle.css
+          git add -f public/bundle.js
           git add .
           git commit --quiet -m "[deploy] $(date)"
 
