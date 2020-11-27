@@ -5,6 +5,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import resolve from 'rollup-plugin-node-resolve';
 import svelte from 'rollup-plugin-svelte';
+import css from 'rollup-plugin-css-only'
 import { terser } from 'rollup-plugin-terser';
 
 
@@ -41,7 +42,10 @@ export default {
 			css: css => {
 				css.write('bundle.css');
 			}
-		}),
+    }),
+    css({
+      output: 'highlight.css'
+    }),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
