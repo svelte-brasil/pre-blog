@@ -395,6 +395,11 @@ highlight.js@9.17.1:
   dependencies:
     handlebars "^4.5.3"
 
+highlight@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/highlight/-/highlight-0.2.4.tgz#8ac02875b03f5935e0675852b76cfe1fd58e0dff"
+  integrity sha1-isAodbA/WTXgZ1hSt2z+H9WODf8=
+
 highlightjs-svelte@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/highlightjs-svelte/-/highlightjs-svelte-1.0.4.tgz#fb4c2cc12ef3d137a4ba45eec1f1622a8318ae08"
