@@ -9,7 +9,7 @@ jobs:
         node-version: [10.x] # Only run the 10.x build
 
     if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - run: git checkout master
