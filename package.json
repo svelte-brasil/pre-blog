@@ -25,7 +25,6 @@
     "start:dev": "sirv public --dev"
   },
   "dependencies": {
-    "highlight.js": "^10.4.0",
     "svelte-i18n": "^3.3.0"
   }
 }
