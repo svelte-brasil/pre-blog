@@ -66,4 +66,16 @@
       font-size: 0.8em;
     }
   }
+
+  @media (prefers-color-scheme: light) {
+    .card {
+      background-color: white;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .card {
+      background-color: #000;
+    }
+  }
 </style>
