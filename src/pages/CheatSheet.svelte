@@ -1,10 +1,8 @@
 <script>
   import Card from '@src/container/Card.svelte'
-
-  import { HighlightSvelte } from 'svelte-highlight'
-  import "svelte-highlight/styles/github.css";
-
   import { cheatSheet } from '@src/data/cheat-sheet'
+  import { HighlightSvelte } from 'svelte-highlight'
+  import 'svelte-highlight/styles/github.css'
   import { _ } from 'svelte-i18n'
 </script>
 
@@ -20,8 +18,7 @@
     <Card title={$_(item.title)}>
       {#each item.content as line}
         <HighlightSvelte
-          code={line.includes('::') ? '//' + $_(line.replace('::', '')) : line}
-        />
+          code={line.includes('::') ? '//' + $_(line.replace('::', '')) : line} />
       {/each}
     </Card>
   {/each}

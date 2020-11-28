@@ -8,9 +8,7 @@
     <span class="circles" />
   </header>
   <div>
-    <pre>
-      <slot>Content</slot>
-    </pre>
+    <slot>Content</slot>
   </div>
 </section>
 
@@ -48,33 +46,16 @@
     margin-left: 20px;
   }
 
-  section > div {
+  .card > div {
     border: var(--m1) solid var(--primary-color);
     padding: var(--m10);
     height: calc(100% - 48px);
     overflow-x: auto;
   }
 
-  pre {
-    font-size: var(--m18);
-    color: var(--secondary-color);
-  }
-
   @media (max-width: 484px) {
     header > h2 {
       font-size: 0.8em;
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    .card {
-      background-color: white;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .card {
-      background-color: #000;
     }
   }
 </style>
