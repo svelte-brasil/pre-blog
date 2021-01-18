@@ -1,8 +1,7 @@
 export const cheatSheet = [
   {
-    title: "svelte_component",
-    content: [
-`<!-- Widget.svelte -->
+    title: "Svelte Component",
+    content: `<!-- Widget.svelte -->
 <script>
   export let textValue
 </script>
@@ -27,37 +26,33 @@ export const cheatSheet = [
 
 <Widget textValue="I'm a svelte component" />
 `
-    ]
   },
   {
-  title: "expressions",
-  content: [
-`<script>
-    let isShowing = true
-    let cat = 'cat'
+    title: "Expressions",
+    content: `<script>
+  let isShowing = true
+  let cat = 'cat'
+  let user = {name: 'John Wick'}
+  let email = 'professionalkiller@gmail.com'
 </script>
 
-`,
-    '<p>2 + 2 = {2 + 2}</p>',
-    ' ',
-`<p>
-  {isShowing ? 'NOW YOU SEE ME' : 'NOW YOU DON ́T SEE ME'}
-</p>`,
-    ' ',
-    '<p>My e-mail is {email}</p>',
-    ' ',
-    '<p>{user.name}</p>',
-    ' ',
-    '<p>{cat + `s`}</p>',
-    ' ',
-    '<p>{`name ${user.name}`}</p>',
-  ]
+<p>2 + 2 = {2 + 2}</p>
+   
+<p>
+  {isShowing 
+    ? 'NOW YOU SEE ME' 
+    : 'NOW YOU DON\`T SEE ME'}
+</p>
+
+<p>My e-mail is {email}</p>
+<p>{user.name}</p>
+<p>{cat + \`s\`}</p>
+<p>{\`name \${user.name}\`}</p>`
+
   },
   {
-  title: "simple_bind",
-  content: [
-
-`//MyLink.svelte
+    title: "Simple Bind",
+    content: `//MyLink.svelte
 <script>
     export let href = ''
     export let title = ''
@@ -66,10 +61,10 @@ export const cheatSheet = [
 
 <a href={href} style={\`color: \${color}\`} >
   {title}
-</a>`,
-` `,
-'::shorthand',
-`<a {href} style={\`color: \${color}\`} >
+</a>
+
+::Shorthand
+<a {href} style={\`color: \${color}\`} >
   {title}
 </a>
 
@@ -84,16 +79,13 @@ export const cheatSheet = [
 
 <MyLink {...link} />
 `
-  ]
   },
   {
-  title: "two_way_bind",
-  content: [
-`<MyInput bind:value={value} />
+    title: "Two Way Bind",
+    content: `<MyInput bind:value={value} />
 
-`,
-'::shorthand',
-`<MyInput bind:value />
+::Shorthand
+<MyInput bind:value />
 
 <select multiple bind:value={fillings}>
   <option value="Rice">Rice</option>
@@ -101,27 +93,39 @@ export const cheatSheet = [
   <option value="Cheese">Cheese</option>
 </select>
 
-<input type="radio" bind:group={tortilla} value="Plain" />
-<input type="radio" bind:group={tortilla} value="Whole wheat" />
+<input 
+  type="radio" 
+  bind:group={tortilla} 
+  value="Plain" />
+<input
+  type="radio" 
+  bind:group={tortilla} 
+  value="Whole wheat" />
 
-<input type="checkbox" bind:group={fillings} value="Rice" />
-<input type="checkbox" bind:group={fillings} value="Beans" />
+<input 
+  type="checkbox" 
+  bind:group={fillings} 
+  value="Rice" />
+<input 
+  type="checkbox" 
+  bind:group={fillings} 
+  value="Beans" />
 
-`,
-'::element_binding',
-`<script>
+::Element Binding
+<script>
   let myDiv
-  myDiv.innerText = 'My text'
 </script>
+
+<button on:click={() => myDiv.innerText = 'My text'}>
+  Click
+</button>
 
 <div bind:this={myDiv}/>
 `
-  ]
   },
   {
-  title: "conditional_render",
-  content: [
-`{#if condition}
+    title: "Conditional Render",
+    content: `{#if condition}
   <p>Condition is true</p>
 {:else if otherCondition}
   <p>OtherCondition is true</p>
@@ -129,18 +133,15 @@ export const cheatSheet = [
   <p>Any Condition is true</p>
 {/if}
 
-`,
-'::re_render',
-`{#key value}
+::Re render
+{#key value}
 	<div transition:fade>{value}</div>
 {/key}
 `
-  ]
   },
   {
-  title: "await_template",
-  content: [
-`{#await promise}
+    title: "Await Template",
+    content: `{#await promise}
   <p>waiting for the promise to resolve...</p>
 {:then value}
   <p>The value is {value}</p>
@@ -148,25 +149,23 @@ export const cheatSheet = [
   <p>Something went wrong: {error.message}</p>
 {/await}
 `
-  ]
+
   },
   {
-  title: "render",
-  content: [
-`<scrit>
-  var myHtml = '<span><strong>My text:</strong> text</span>'
+    title: "Render HTML",
+    content: `<scrit>
+  const myHtml = '<span><strong>My text:</strong> text</span>'
 </scrit>
 
 {@html '<div>Content</div>'}
 
 {@html myHtml}
 `
-  ]
+
   },
   {
-  title: "handle_events",
-  content: [
-`<button on:click={handleClick}>
+    title: "Handle Events",
+    content: `<button on:click={handleClick}>
   Press me
 </button>
 
@@ -182,24 +181,32 @@ export const cheatSheet = [
   Press me
 </button>
 `
-]
   },
   {
-  title: "forwarding_event",
-  content: [
-`<script>
+    title: "Forwarding Event",
+    content: `::Widget.svelte
+<script>
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 </script>
 <button on:click={() => dispatch('message', { text: 'Hello!' })} />
 <button on:click>Press me</button>
+
+::App.svelte
+<script>
+import Widget from '.Widget.svelte'
+</script>
+
+<Widget 
+  on:click={() => alert('I was clicked')} 
+  on:message={e => alert(e.detail.text)}>
+
 `
-  ]
   },
   {
-  title: "rendering_list",
-  content: [
-`<ul>
+    title: "Rendering List",
+    content:
+      `<ul>
   {#each items as item}
   <li>{item.name} x {item.qty}</li>
   {:else}
@@ -221,12 +228,12 @@ export const cheatSheet = [
   </li>
 {/each}
 `
-  ]
+
   },
   {
-  title: "using_slot",
-  content: [
-`<!-- Widget.svelte -->
+    title: "Using Slot",
+    content:
+      `<!-- Widget.svelte -->
 <div>
   <slot>Default content</slot>
 </div>
@@ -237,12 +244,12 @@ export const cheatSheet = [
   <p>I   changed the default content</p>
 </Widget>
 `
-  ]
+
   },
   {
-  title: "multiple_slot",
-  content: [
-`<!-- Widget.svelte -->
+    title: "Multiple Slot",
+    content:
+      `<!-- Widget.svelte -->
 <div>
   <slot name="header">
     No header was provided
@@ -279,31 +286,34 @@ export const cheatSheet = [
   </div>
 </FancyList>
 `
-    ]
+
   },
   {
-    title: "class_binding",
-    content: [
-`<script>
+    title: "Class Binding",
+    content: `<script>
    export let type = 'normal'
    export let active = true
 </script>
 
-<div class={active ? active : ''}  class={type}>...</div>
+<div class={active ? active : ''}  class={type}>
+...
+</div>
 
-<div class:active={active} class={\`otherClass \${type}\`}>...</div>
+<div class:active={active} class={\`otherClass \${type}\`}>
+...
+</div>
 
-`,
-'::match_class',
-`
+
+::Match class
+
 <div class:active>...</div>
 `
-    ]
+
   },
   {
-  title: "lifecycle",
-  content: [
-`
+    title: "Lifecycle",
+    content:
+      `
 <script>
 import onMount from 'svelte'
 
@@ -314,36 +324,39 @@ onMount(() => {
 })
 </script>
 
-`,
-    '::lifecycle',
-`[
+
+::Other lifecycle functions
+[
   onMount(() => {}),
   beforeUpdate(() => {}),
   afterUpdate(() => {}),
   onDestroy(() => {})
 ]`
-  ]
+
   },
   {
-  title: "animations",
-  content: [
-`<script>
+    title: "Animations",
+    content:
+      `<script>
   import { flip } from "svelte/animate";
   import { quintOut } from "svelte/easing";
   let list = [1, 2, 3];
 </script>
 
 {#each list as n (n)}
-  <div animate:flip={{ delay: 250, duration: 250, easing: quintOut}}>
+  <div animate:flip={{ 
+    delay: 250, 
+    duration: 250, 
+    easing: quintOut
+  }}>
     {n}
   </div>
 {/each}
 `
-  ]
   },
   {
-  title: "transitions",
-  content: [
+    title: "Transitions",
+    content:
 `<script>
   import { fade } from "svelte/transition";
 
@@ -356,27 +369,23 @@ onMount(() => {
   </div>
 {/if}
 
-`,
-
-'::transitions',
-`[Blur, Scale, Fly, Draw, Slide]
+::Other transitions
+[Blur, Scale, Fly, Draw, Slide]
 `
-  ]
   },
   {
-  title: "reactive_expressions",
-  content: [
+    title: "Reactive Expressions",
+    content:
 `<script>
   export let num let count = 0
   $: squared = num * num count = 9
   $: cubed = squared * num
 </script>
 `
-  ]
   },
   {
-  title: "reactive_statement",
-  content: [
+    title: "Reactive Statement",
+    content:
 `<script>
   $: if (count >= 10) {
     alert('count is dangerously high!')
@@ -384,6 +393,5 @@ onMount(() => {
   }
 </script>
 `
-  ]
   },
 ]
