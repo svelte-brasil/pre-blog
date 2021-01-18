@@ -16,10 +16,8 @@
 <section class="container">
   {#each cheatSheet as item}
     <Card title={$_(item.title)}>
-      {#each item.content as line}
         <HighlightSvelte
-          code={line.includes('::') ? '//' + $_(line.replace('::', '')) : line} />
-      {/each}
+          code={item.content.replate(/::/g, '//')} />
     </Card>
   {/each}
 </section>
