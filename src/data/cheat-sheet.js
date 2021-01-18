@@ -38,10 +38,10 @@ export const cheatSheet = [
 
 <p>2 + 2 = {2 + 2}</p>
    
-<p>
+<p on:click={() => isShowing = !isShowing}>
   {isShowing 
-    ? 'NOW YOU SEE ME' 
-    : 'NOW YOU DON\`T SEE ME'}
+    ? 'NOW YOU SEE ME 👀' 
+    : 'NOW YOU DON\`T SEE ME 🙈'}
 </p>
 
 <p>My e-mail is {email}</p>
