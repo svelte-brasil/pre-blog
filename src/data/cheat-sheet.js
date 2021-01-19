@@ -5,25 +5,20 @@ export const cheatSheet = [
 <script>
   export let textValue
 </script>
-
 <div class="container">
   {textValue}
 </div>
-
 <style>
 .container {
   color: blue;
 }
 </style>
-
 <!-- App.svelte -->
 <script>
   import Widget from './Widget.svelte'
   const title = 'App'
 </script>
-
 <header>{title}</header>
-
 <Widget textValue="I'm a svelte component" />
 `
   },
@@ -35,7 +30,6 @@ export const cheatSheet = [
   let user = {name: 'John Wick'}
   let email = 'professionalkiller@gmail.com'
 </script>
-
 <p>2 + 2 = {2 + 2}</p>
    
 <p on:click={() => isShowing = !isShowing}>
@@ -43,7 +37,6 @@ export const cheatSheet = [
     ? 'NOW YOU SEE ME 👀' 
     : 'NOW YOU DON\`T SEE ME 🙈'}
 </p>
-
 <p>My e-mail is {email}</p>
 <p>{user.name}</p>
 <p>{cat + \`s\`}</p>
@@ -58,16 +51,13 @@ export const cheatSheet = [
     export let title = ''
     export let color = ''
 </script>
-
 <a href={href} style={\`color: \${color}\`} >
   {title}
 </a>
-
-::Shorthand
+// Shorthand
 <a {href} style={\`color: \${color}\`} >
   {title}
 </a>
-
 <script>
   import MyLink from "./components/MyLink";
   let link = {
@@ -76,23 +66,19 @@ export const cheatSheet = [
     color: "#ff3300"
   };
 </script>
-
 <MyLink {...link} />
 `
   },
   {
     title: "Two Way Bind",
     content: `<MyInput bind:value={value} />
-
-::Shorthand
+// Shorthand
 <MyInput bind:value />
-
 <select multiple bind:value={fillings}>
   <option value="Rice">Rice</option>
   <option value="Beans">Beans</option>
   <option value="Cheese">Cheese</option>
 </select>
-
 <input 
   type="radio" 
   bind:group={tortilla} 
@@ -101,7 +87,6 @@ export const cheatSheet = [
   type="radio" 
   bind:group={tortilla} 
   value="Whole wheat" />
-
 <input 
   type="checkbox" 
   bind:group={fillings} 
@@ -110,18 +95,30 @@ export const cheatSheet = [
   type="checkbox" 
   bind:group={fillings} 
   value="Beans" />
-
-::Element Binding
+// Element Binding
 <script>
   let myDiv
 </script>
-
 <button on:click={() => myDiv.innerText = 'My text'}>
   Click
 </button>
-
 <div bind:this={myDiv}/>
 `
+  },
+  {
+    title: 'Use action',
+    content: `<script>
+  function myFunction(node) {
+    // the node has been mounted in the DOM
+    return {
+      destroy() {
+        // the node has been removed from the DOM
+      }
+    };
+  }
+</script>
+<div use:myFunction></div>
+    `
   },
   {
     title: "Conditional Render",
@@ -132,8 +129,7 @@ export const cheatSheet = [
 {:else}
   <p>Any Condition is true</p>
 {/if}
-
-::Re render
+// Re render
 {#key value}
 	<div transition:fade>{value}</div>
 {/key}
@@ -156,9 +152,7 @@ export const cheatSheet = [
     content: `<scrit>
   const myHtml = '<span><strong>My text:</strong> text</span>'
 </scrit>
-
 {@html '<div>Content</div>'}
-
 {@html myHtml}
 `
 
@@ -168,15 +162,12 @@ export const cheatSheet = [
     content: `<button on:click={handleClick}>
   Press me
 </button>
-
 <button on:click={() => console.log('I was pressed')}>
   Press me
 </button>
-
 <button on:click|once={handleClick}>
   Press me
 </button>
-
 <button on:submit|preventDefault={handleClick}>
   Press me
 </button>
@@ -184,23 +175,20 @@ export const cheatSheet = [
   },
   {
     title: "Forwarding Event",
-    content: `::Widget.svelte
+    content: `// Widget.svelte
 <script>
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 </script>
 <button on:click={() => dispatch('message', { text: 'Hello!' })} />
 <button on:click>Press me</button>
-
-::App.svelte
+// App.svelte
 <script>
 import Widget from '.Widget.svelte'
 </script>
-
 <Widget 
   on:click={() => alert('I was clicked')} 
   on:message={e => alert(e.detail.text)}>
-
 `
   },
   {
@@ -213,14 +201,12 @@ import Widget from '.Widget.svelte'
   <li>Empty list</li>
   {/each}
 </ul>
-
 //INDEX
 {#each items as item, index}
   <li>
     {index + 1}: {item.name} x {item.qty}
   </li>
 {/each}
-
 //INDEX                       (KEY)
 {#each items as item, index (item.id)}
   <li>
@@ -237,7 +223,6 @@ import Widget from '.Widget.svelte'
 <div>
   <slot>Default content</slot>
 </div>
-
 <!-- App.svelte -->
 <Widget />
 <Widget>
@@ -254,14 +239,11 @@ import Widget from '.Widget.svelte'
   <slot name="header">
     No header was provided
   </slot>
-
   <slot>
     <p>Some content between header and footer</p>
   </slot>
-
   <slot name="footer" />
 </div>
-
 <!-- App.svelte -->
 <Widget>
   <h1 slot="header">Hello</h1>
@@ -269,7 +251,6 @@ import Widget from '.Widget.svelte'
     Copyright (c) 2020 Svelte Brazil
   </p>
 </Widget>
-
 <!-- FancyList.svelte -->
 <ul>
 {#each items as item}
@@ -278,7 +259,6 @@ import Widget from '.Widget.svelte'
   </li>
 {/each}
 </ul>
-
 <!-- App.svelte -->
 <FancyList {items}>
   <div slot="item" let:item>
@@ -294,18 +274,13 @@ import Widget from '.Widget.svelte'
    export let type = 'normal'
    export let active = true
 </script>
-
 <div class={active ? active : ''}  class={type}>
 ...
 </div>
-
 <div class:active={active} class={\`otherClass \${type}\`}>
 ...
 </div>
-
-
-::Match class
-
+// Match class
 <div class:active>...</div>
 `
 
@@ -316,16 +291,12 @@ import Widget from '.Widget.svelte'
       `
 <script>
 import onMount from 'svelte'
-
 onMount(() => {
   console.log('Mounting')
-
   return () => (consolo.log('going out'))
 })
 </script>
-
-
-::Other lifecycle functions
+// Other lifecycle functions
 [
   onMount(() => {}),
   beforeUpdate(() => {}),
@@ -342,7 +313,6 @@ onMount(() => {
   import { quintOut } from "svelte/easing";
   let list = [1, 2, 3];
 </script>
-
 {#each list as n (n)}
   <div animate:flip={{ 
     delay: 250, 
@@ -359,17 +329,14 @@ onMount(() => {
     content:
 `<script>
   import { fade } from "svelte/transition";
-
   export let condition;
 </script>
-
 {#if condition}
   <div transition:fade={{ delay: 250, duration: 300 }}>
     fades in  and out
   </div>
 {/if}
-
-::Other transitions
+// Other transitions
 [Blur, Scale, Fly, Draw, Slide]
 `
   },
@@ -377,10 +344,20 @@ onMount(() => {
     title: "Reactive Expressions",
     content:
 `<script>
-  export let num let count = 0
-  $: squared = num * num count = 9
+  export let num 
+  let count = 0
+  
+  $: squared = num * num
   $: cubed = squared * num
 </script>
+<p>
+  {count}
+  <button on:click={() => count++}>
+    Increment
+  </button>
+</p>
+<p>{square}</p>
+<p>{cubed}</p>
 `
   },
   {
