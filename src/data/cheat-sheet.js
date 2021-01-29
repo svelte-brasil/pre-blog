@@ -344,19 +344,14 @@ onMount(() => {
     title: "Reactive Expressions",
     content:
 `<script>
-  export let num 
-  let count = 0
-  
+  let num = 0
   $: squared = num * num
   $: cubed = squared * num
 </script>
-<p>
-  {count}
-  <button on:click={() => count++}>
-    Increment
-  </button>
-</p>
-<p>{square}</p>
+<button on:click={() => num = num + 1}>
+  Increment: {num}
+</button>
+<p>{squared}</p>
 <p>{cubed}</p>
 `
   },
@@ -368,6 +363,29 @@ onMount(() => {
     alert('count is dangerously high!')
     count = 9
   }
+  let foo, bar, baz
+  $: quux = foo + bar
+  $: console.log(quux)
+  $: {
+    // block expression
+  }
+  $: if (quux > 10) {
+    // actually any ->
+  } else {
+    // js expression
+  }
+  $: for (let i = 0; i < baz; i++) {
+    // any js expression
+  }
+  // function declaration too
+  $: grunt = arg => quux / arg * baz
+  $: { // this would also work
+    if (quux < 10) break $
+    baz++
+  }
+  $: (async () => { // and even this
+    bar = await Promise.resolve(foo%2)
+  })()
 </script>
 `
   },
