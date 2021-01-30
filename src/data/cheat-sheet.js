@@ -1,7 +1,7 @@
 export const cheatSheet = [
   {
     title: 'Svelte Component',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/6a5416148c4b410b8ee0325eef54b107',
     content: `<!-- Widget.svelte -->
 <script>
   export let textValue
@@ -14,6 +14,7 @@ export const cheatSheet = [
   color: blue;
 }
 </style>
+
 <!-- App.svelte -->
 <script>
   import Widget from './Widget.svelte'
