@@ -377,7 +377,7 @@ onMount(() => {
   },
   {
     title: 'Reactive Statement',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/b959727e045e4eb7b70c7f16e425fed5',
     content: `<script>
   $: if (count >= 10) {
     alert('count is dangerously high!')
@@ -404,7 +404,7 @@ onMount(() => {
     baz++
   }
   $: (async () => { // and even this
-    bar = await Promise.resolve(foo%2)
+    bar = await Promise.resolve(foo % 2)
   })()
 </script>
 `,
