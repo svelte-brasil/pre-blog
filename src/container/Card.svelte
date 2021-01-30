@@ -1,12 +1,15 @@
 <script>
   export let title = ''
+  export let repl = ''
 </script>
 
 <section class="card">
   <header>
     <h2>{title}</h2>
     <div class="circles">
-      <span class="circle red" />
+      <a href={repl} class="circle red" title="código no REPL" target="_blank"
+        ><span /></a
+      >
       <span class="circle yellow" />
       <span class="circle green" />
     </div>
