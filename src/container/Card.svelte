@@ -12,7 +12,7 @@
     const element = document.getElementById(title).firstChild
     if (navigator.clipboard) {
       navigator.clipboard.writeText(element.innerText)
-      alert('Copied to clipboard')
+      alert($_('copied_clipboard'))
     }
   }
 </script>
@@ -26,7 +26,7 @@
   </header>
   <section>
     {#if navigator.clipboard}
-      <a href on:click|preventDefault={copy} title="Copy to clipborad">📋</a>
+      <a href on:click|preventDefault={copy} title={$_('copy_clipboard')}>📋</a>
     {/if}
 
     <a href={doc} target="_blank" title={$_('doc')}>📃</a>

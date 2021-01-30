@@ -28469,26 +28469,33 @@ var app = (function () {
 
     function create_if_block(ctx) {
     	let a;
+    	let t;
+    	let a_title_value;
     	let mounted;
     	let dispose;
 
     	return {
     		c() {
     			a = element("a");
-    			a.textContent = "📋";
+    			t = text("📋");
     			attr(a, "href", "");
-    			attr(a, "title", "Copy to clipborad");
+    			attr(a, "title", a_title_value = /*$_*/ ctx[4]("copy_clipboard"));
     			attr(a, "class", "svelte-i8byns");
     		},
     		m(target, anchor) {
     			insert(target, a, anchor);
+    			append(a, t);
 
     			if (!mounted) {
     				dispose = listen(a, "click", prevent_default(/*copy*/ ctx[5]));
     				mounted = true;
     			}
     		},
-    		p: noop,
+    		p(ctx, dirty) {
+    			if (dirty & /*$_*/ 16 && a_title_value !== (a_title_value = /*$_*/ ctx[4]("copy_clipboard"))) {
+    				attr(a, "title", a_title_value);
+    			}
+    		},
     		d(detaching) {
     			if (detaching) detach(a);
     			mounted = false;
@@ -28639,7 +28646,7 @@ var app = (function () {
 
     		if (navigator.clipboard) {
     			navigator.clipboard.writeText(element.innerText);
-    			alert("Copied to clipboard");
+    			alert($_("copied_clipboard"));
     		}
     	}
 
