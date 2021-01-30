@@ -251,7 +251,7 @@ import Widget from './Widget.svelte'
   },
   {
     title: 'Multiple Slot',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/abc6ecc5953c4c77af402185a2219df4',
     content: `<!-- Widget.svelte -->
 <div>
   <slot name="header">
