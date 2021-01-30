@@ -187,23 +187,24 @@ export const cheatSheet = [
   },
   {
     title: 'Forwarding Event',
-    repl: '#',
-    title: "Forwarding Event",
-    content: `// Widget.svelte
+    repl: 'https://svelte.dev/repl/f1e3b92d7a3c466bb614aa8f49cde3b1',
+    content: `<!-- Widget.svelte -->
 <script>
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 </script>
-<button on:click={() => dispatch('message', { text: 'Hello!' })} />
+
+<button on:click={() => dispatch('message', { text: 'Hello!' })}>Say Hi!</button>
 <button on:click>Press me</button>
-// App.svelte
+
+<!-- App.svelte -->
 <script>
-import Widget from '.Widget.svelte'
+import Widget from './Widget.svelte'
 </script>
-<Widget 
-  on:click={() => alert('I was clicked')} 
-  on:message={e => alert(e.detail.text)}>
-`
+<Widget
+  on:click={() => alert('I was clicked')}
+  on:message={e => alert(e.detail.text)} />
+`,
   },
   {
     title: 'Rendering List',
