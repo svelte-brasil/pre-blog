@@ -78,7 +78,7 @@ export const cheatSheet = [
   },
   {
     title: 'Two Way Bind',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/63c1cc2e6ab24d33ae531d6acdabc14e',
     content: `<MyInput bind:value={value} />
 // Shorthand
 <MyInput bind:value />
@@ -87,21 +87,21 @@ export const cheatSheet = [
   <option value="Beans">Beans</option>
   <option value="Cheese">Cheese</option>
 </select>
-<input 
-  type="radio" 
-  bind:group={tortilla} 
+<input
+  type="radio"
+  bind:group={tortilla}
   value="Plain" />
 <input
-  type="radio" 
-  bind:group={tortilla} 
+  type="radio"
+  bind:group={tortilla}
   value="Whole wheat" />
-<input 
-  type="checkbox" 
-  bind:group={fillings} 
+<input
+  type="checkbox"
+  bind:group={fillings}
   value="Rice" />
-<input 
-  type="checkbox" 
-  bind:group={fillings} 
+<input
+  type="checkbox"
+  bind:group={fillings}
   value="Beans" />
 // Element Binding
 <script>
