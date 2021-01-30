@@ -30,5 +30,7 @@
   "match_class": "When the property name is the same as the class name",
   "repl": "See in REPL",
   "doc": "Go to documentation",
-  "use_action": "Use action"
+  "use_action": "Use action",
+  "copy_clipboard": "Copy to clipboard",
+  "copied_clipboard": "Copied to clipboard"
 }

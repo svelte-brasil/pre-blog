@@ -7,6 +7,14 @@
   export let repl = ''
   export let doc = ''
   export let content = ''
+
+  function copy() {
+    const element = document.getElementById(title).firstChild
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(element.innerText)
+      alert('Copied to clipboard')
+    }
+  }
 </script>
 
 <section class="card">
@@ -17,13 +25,15 @@
     <span class="circles" />
   </header>
   <section>
-    {#if doc}
-      <a href={doc} target="_blank" title={$_('doc')}>📃</a>
+    {#if navigator.clipboard}
+      <a href on:click|preventDefault={copy} title="Copy to clipborad">📋</a>
     {/if}
+
+    <a href={doc} target="_blank" title={$_('doc')}>📃</a>
     <a href={repl} target="_blank" title={$_('repl')}>💻</a>
   </section>
   <div class="content">
-    <HighlightSvelte code={content} />
+    <HighlightSvelte id={title} code={content} />
   </div>
 </section>
 
