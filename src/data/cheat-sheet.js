@@ -1,6 +1,7 @@
 export const cheatSheet = [
   {
-    title: "Svelte Component",
+    title: 'Svelte Component',
+    repl: 'https://svelte.dev/repl/6a5416148c4b410b8ee0325eef54b107',
     content: `<!-- Widget.svelte -->
 <script>
   export let textValue
@@ -13,17 +14,19 @@ export const cheatSheet = [
   color: blue;
 }
 </style>
+
 <!-- App.svelte -->
 <script>
   import Widget from './Widget.svelte'
   const title = 'App'
 </script>
 <header>{title}</header>
-<Widget textValue="I'm a svelte component" />
-`
+<Widget textValue="I'm a Svelte component" />
+`,
   },
   {
-    title: "Expressions",
+    title: 'Expressions',
+    repl: 'https://svelte.dev/repl/27bd55a7357046f2911923069dee9d86',
     content: `<script>
   let isShowing = true
   let cat = 'cat'
@@ -31,21 +34,21 @@ export const cheatSheet = [
   let email = 'professionalkiller@gmail.com'
 </script>
 <p>2 + 2 = {2 + 2}</p>
-   
+
 <p on:click={() => isShowing = !isShowing}>
-  {isShowing 
-    ? 'NOW YOU SEE ME 👀' 
+  {isShowing
+    ? 'NOW YOU SEE ME 👀'
     : 'NOW YOU DON\`T SEE ME 🙈'}
 </p>
 <p>My e-mail is {email}</p>
 <p>{user.name}</p>
 <p>{cat + \`s\`}</p>
-<p>{\`name \${user.name}\`}</p>`
-
+<p>{\`name \${user.name}\`}</p>`,
   },
   {
-    title: "Simple Bind",
-    content: `//MyLink.svelte
+    title: 'Simple Bind',
+    repl: 'https://svelte.dev/repl/505dfd64708844c7b28ead4834059d69',
+    content: `<!-- MyLink.svelte -->
 <script>
     export let href = ''
     export let title = ''
@@ -54,23 +57,28 @@ export const cheatSheet = [
 <a href={href} style={\`color: \${color}\`} >
   {title}
 </a>
-// Shorthand
+
+<!-- Shorthand
 <a {href} style={\`color: \${color}\`} >
   {title}
-</a>
+</a> -->
+
+<!-- App.svelte -->
 <script>
   import MyLink from "./components/MyLink";
   let link = {
     href: "http://www.mysite.com",
     title: "My Site",
+    repl: "#",
     color: "#ff3300"
   };
 </script>
 <MyLink {...link} />
-`
+`,
   },
   {
-    title: "Two Way Bind",
+    title: 'Two Way Bind',
+    repl: 'https://svelte.dev/repl/63c1cc2e6ab24d33ae531d6acdabc14e',
     content: `<MyInput bind:value={value} />
 // Shorthand
 <MyInput bind:value />
@@ -79,21 +87,21 @@ export const cheatSheet = [
   <option value="Beans">Beans</option>
   <option value="Cheese">Cheese</option>
 </select>
-<input 
-  type="radio" 
-  bind:group={tortilla} 
+<input
+  type="radio"
+  bind:group={tortilla}
   value="Plain" />
 <input
-  type="radio" 
-  bind:group={tortilla} 
+  type="radio"
+  bind:group={tortilla}
   value="Whole wheat" />
-<input 
-  type="checkbox" 
-  bind:group={fillings} 
+<input
+  type="checkbox"
+  bind:group={fillings}
   value="Rice" />
-<input 
-  type="checkbox" 
-  bind:group={fillings} 
+<input
+  type="checkbox"
+  bind:group={fillings}
   value="Beans" />
 // Element Binding
 <script>
@@ -103,10 +111,11 @@ export const cheatSheet = [
   Click
 </button>
 <div bind:this={myDiv}/>
-`
+`,
   },
   {
     title: 'Use action',
+    repl: 'https://svelte.dev/repl/6262d071414f42e98cdeed1f3c78d93e',
     content: `<script>
   function myFunction(node) {
     // the node has been mounted in the DOM
@@ -118,10 +127,11 @@ export const cheatSheet = [
   }
 </script>
 <div use:myFunction></div>
-    `
+    `,
   },
   {
-    title: "Conditional Render",
+    title: 'Conditional Render',
+    repl: 'https://svelte.dev/repl/b023c56cdf0d42819fe7ccc38ea75c41',
     content: `{#if condition}
   <p>Condition is true</p>
 {:else if otherCondition}
@@ -133,10 +143,11 @@ export const cheatSheet = [
 {#key value}
 	<div transition:fade>{value}</div>
 {/key}
-`
+`,
   },
   {
-    title: "Await Template",
+    title: 'Await Template',
+    repl: 'https://svelte.dev/repl/22a36f1affba4334807a133d985ce6ef',
     content: `{#await promise}
   <p>waiting for the promise to resolve...</p>
 {:then value}
@@ -144,21 +155,22 @@ export const cheatSheet = [
 {:catch error}
   <p>Something went wrong: {error.message}</p>
 {/await}
-`
-
+`,
   },
   {
-    title: "Render HTML",
-    content: `<scrit>
+    title: 'Render HTML',
+    repl: 'https://svelte.dev/repl/44896bb6272d48b2a0a5909678b07cc9',
+    content: `<script>
   const myHtml = '<span><strong>My text:</strong> text</span>'
-</scrit>
+</script>
+
 {@html '<div>Content</div>'}
 {@html myHtml}
-`
-
+`,
   },
   {
-    title: "Handle Events",
+    title: 'Handle Events',
+    repl: 'https://svelte.dev/repl/10cfb455b7b84514b35913aabee8b5c3',
     content: `<button on:click={handleClick}>
   Press me
 </button>
@@ -171,30 +183,33 @@ export const cheatSheet = [
 <button on:submit|preventDefault={handleClick}>
   Press me
 </button>
-`
+`,
   },
   {
-    title: "Forwarding Event",
-    content: `// Widget.svelte
+    title: 'Forwarding Event',
+    repl: 'https://svelte.dev/repl/f1e3b92d7a3c466bb614aa8f49cde3b1',
+    content: `<!-- Widget.svelte -->
 <script>
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 </script>
-<button on:click={() => dispatch('message', { text: 'Hello!' })} />
+
+<button on:click={() => dispatch('message', { text: 'Hello!' })}>Say Hi!</button>
 <button on:click>Press me</button>
-// App.svelte
+
+<!-- App.svelte -->
 <script>
-import Widget from '.Widget.svelte'
+import Widget from './Widget.svelte'
 </script>
-<Widget 
-  on:click={() => alert('I was clicked')} 
-  on:message={e => alert(e.detail.text)}>
-`
+<Widget
+  on:click={() => alert('I was clicked')}
+  on:message={e => alert(e.detail.text)} />
+`,
   },
   {
-    title: "Rendering List",
-    content:
-      `<ul>
+    title: 'Rendering List',
+    repl: 'https://svelte.dev/repl/db8ac032184b455bbeed903ba042937c',
+    content: `<ul>
   {#each items as item}
   <li>{item.name} x {item.qty}</li>
   {:else}
@@ -213,28 +228,31 @@ import Widget from '.Widget.svelte'
     {index + 1}: {item.name} x {item.qty}
   </li>
 {/each}
-`
-
+`,
   },
   {
-    title: "Using Slot",
-    content:
-      `<!-- Widget.svelte -->
+    title: 'Using Slot',
+    repl: 'https://svelte.dev/repl/4844ee8feb794ed4bde10508cdb177cf?version=3',
+    content: `<!-- Widget.svelte -->
 <div>
   <slot>Default content</slot>
 </div>
+
 <!-- App.svelte -->
+<script>
+	import Widget from "./Widget.svelte"
+</script>
+
 <Widget />
 <Widget>
-  <p>I   changed the default content</p>
+  <p>I changed the default content</p>
 </Widget>
-`
-
+`,
   },
   {
-    title: "Multiple Slot",
-    content:
-      `<!-- Widget.svelte -->
+    title: 'Multiple Slot',
+    repl: 'https://svelte.dev/repl/abc6ecc5953c4c77af402185a2219df4',
+    content: `<!-- Widget.svelte -->
 <div>
   <slot name="header">
     No header was provided
@@ -265,85 +283,87 @@ import Widget from '.Widget.svelte'
     {item.text}
   </div>
 </FancyList>
-`
-
+`,
   },
   {
-    title: "Class Binding",
+    title: 'Class Binding',
+    repl: 'https://svelte.dev/repl/c0c8e997fec1428ba670d4a95829d110',
     content: `<script>
    export let type = 'normal'
    export let active = true
 </script>
-<div class={active ? active : ''}  class={type}>
-...
-</div>
+
+<div class={active ? active : ''}>...</div>
+<div class={type}>...</div>
+
 <div class:active={active} class={\`otherClass \${type}\`}>
 ...
 </div>
-// Match class
-<div class:active>...</div>
-`
 
+<!-- Class Toggle -->
+<div class:active>...</div>
+`,
   },
   {
-    title: "Lifecycle",
-    content:
-      `
+    title: 'Lifecycle',
+    repl: 'https://svelte.dev/repl/ca959a7e552a4b35aa678dbe9a2d2b48',
+    content: `
 <script>
-import onMount from 'svelte'
+import { onMount } from 'svelte'
 onMount(() => {
   console.log('Mounting')
-  return () => (consolo.log('going out'))
+  return () => (console.log('going out'))
 })
 </script>
-// Other lifecycle functions
-[
+<!--
+	Other lifecycle functions
+
   onMount(() => {}),
   beforeUpdate(() => {}),
   afterUpdate(() => {}),
   onDestroy(() => {})
-]`
-
+-->`,
   },
   {
-    title: "Animations",
-    content:
-      `<script>
+    title: 'Animations',
+    repl: 'https://svelte.dev/repl/f2ba3adfe6cf49a58a38540530567354',
+    content: `<script>
   import { flip } from "svelte/animate";
   import { quintOut } from "svelte/easing";
   let list = [1, 2, 3];
 </script>
 {#each list as n (n)}
-  <div animate:flip={{ 
-    delay: 250, 
-    duration: 250, 
+  <div animate:flip={{
+    delay: 250,
+    duration: 2000,
     easing: quintOut
   }}>
     {n}
   </div>
 {/each}
-`
+`,
   },
   {
-    title: "Transitions",
-    content:
-`<script>
+    title: 'Transitions',
+    repl: 'https://svelte.dev/repl/6e505d732f1e48abbd7d3c4ba4cfc34c',
+    content: `<script>
   import { fade } from "svelte/transition";
-  export let condition;
+  let condition;
 </script>
 {#if condition}
   <div transition:fade={{ delay: 250, duration: 300 }}>
     fades in  and out
   </div>
 {/if}
-// Other transitions
+<-- Other transitions
+
 [Blur, Scale, Fly, Draw, Slide]
-`
+-->`,
   },
   {
-    title: "Reactive Expressions",
-    content:
-`<script>
+    title: 'Reactive Expressions',
+    repl: 'https://svelte.dev/repl/0f7793bf7b0745f1b356327fad4a71e1',
+    content: `<script>
   let num = 0
   $: squared = num * num
   $: cubed = squared * num
@@ -351,14 +371,14 @@ onMount(() => {
 <button on:click={() => num = num + 1}>
   Increment: {num}
 </button>
-<p>{squared}</p>
-<p>{cubed}</p>
-`
+<p>{num}<sup>2</sup> = {squared}</p>
+<p>{num}<sup>3</sup> = {cubed}</p>
+`,
   },
   {
-    title: "Reactive Statement",
-    content:
-`<script>
+    title: 'Reactive Statement',
+    repl: 'https://svelte.dev/repl/b959727e045e4eb7b70c7f16e425fed5',
+    content: `<script>
   $: if (count >= 10) {
     alert('count is dangerously high!')
     count = 9
@@ -384,9 +404,9 @@ onMount(() => {
     baz++
   }
   $: (async () => { // and even this
-    bar = await Promise.resolve(foo%2)
+    bar = await Promise.resolve(foo % 2)
   })()
 </script>
-`
+`,
   },
 ]

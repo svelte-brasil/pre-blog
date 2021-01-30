@@ -1,11 +1,18 @@
 <script>
   export let title = ''
+  export let repl = ''
 </script>
 
 <section class="card">
   <header>
     <h2>{title}</h2>
-    <span class="circles" />
+    <div class="circles">
+      <a href={repl} class="circle red" title="código no REPL" target="_blank"
+        ><span /></a
+      >
+      <span class="circle yellow" />
+      <span class="circle green" />
+    </div>
   </header>
   <div>
     <slot>Content</slot>
@@ -35,15 +42,30 @@
   }
 
   header > .circles {
-    display: block;
+    height: var(--m18);
+  }
+
+  .circle {
+    display: inline-block;
     width: var(--m18);
     height: var(--m18);
     border-radius: 50%;
     background-color: var(--red-color);
     border: 1px solid #fff;
-    box-shadow: 25px 0 0 0 var(--yellow-color), 50px 0 0 0 var(--green-color);
-    margin-right: 50px;
-    margin-left: 20px;
+    margin: 0 0 0 5px;
+    content: '\f30c';
+    text-decoration: none;
+  }
+  .red {
+    background-color: var(--red-color);
+  }
+
+  .yellow {
+    background-color: var(--yellow-color);
+  }
+
+  .green {
+    background-color: var(--green-color);
   }
 
   .card > div {
