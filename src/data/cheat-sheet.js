@@ -26,7 +26,7 @@ export const cheatSheet = [
   },
   {
     title: 'Expressions',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/27bd55a7357046f2911923069dee9d86',
     content: `<script>
   let isShowing = true
   let cat = 'cat'
