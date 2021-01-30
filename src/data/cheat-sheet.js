@@ -114,7 +114,7 @@ export const cheatSheet = [
   },
   {
     title: 'Use action',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/6262d071414f42e98cdeed1f3c78d93e',
     content: `<script>
   function myFunction(node) {
     // the node has been mounted in the DOM
@@ -130,7 +130,7 @@ export const cheatSheet = [
   },
   {
     title: 'Conditional Render',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/b023c56cdf0d42819fe7ccc38ea75c41',
     content: `{#if condition}
   <p>Condition is true</p>
 {:else if otherCondition}
@@ -146,7 +146,7 @@ export const cheatSheet = [
   },
   {
     title: 'Await Template',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/22a36f1affba4334807a133d985ce6ef',
     content: `{#await promise}
   <p>waiting for the promise to resolve...</p>
 {:then value}
@@ -158,17 +158,18 @@ export const cheatSheet = [
   },
   {
     title: 'Render HTML',
-    repl: '#',
-    content: `<scrit>
+    repl: 'https://svelte.dev/repl/44896bb6272d48b2a0a5909678b07cc9',
+    content: `<script>
   const myHtml = '<span><strong>My text:</strong> text</span>'
-</scrit>
+</script>
+
 {@html '<div>Content</div>'}
 {@html myHtml}
 `,
   },
   {
     title: 'Handle Events',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/10cfb455b7b84514b35913aabee8b5c3',
     content: `<button on:click={handleClick}>
   Press me
 </button>
@@ -185,26 +186,28 @@ export const cheatSheet = [
   },
   {
     title: 'Forwarding Event',
-    repl: '#',
-    content: `// Widget.svelte
+    repl: 'https://svelte.dev/repl/f1e3b92d7a3c466bb614aa8f49cde3b1',
+    content: `<!-- Widget.svelte -->
 <script>
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 </script>
-<button on:click={() => dispatch('message', { text: 'Hello!' })} />
+
+<button on:click={() => dispatch('message', { text: 'Hello!' })}>Say Hi!</button>
 <button on:click>Press me</button>
-// App.svelte
+
+<!-- App.svelte -->
 <script>
-import Widget from '.Widget.svelte'
+import Widget from './Widget.svelte'
 </script>
 <Widget
   on:click={() => alert('I was clicked')}
-  on:message={e => alert(e.detail.text)}>
+  on:message={e => alert(e.detail.text)} />
 `,
   },
   {
     title: 'Rendering List',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/db8ac032184b455bbeed903ba042937c',
     content: `<ul>
   {#each items as item}
   <li>{item.name} x {item.qty}</li>
