@@ -345,19 +345,20 @@ onMount(() => {
   },
   {
     title: 'Transitions',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/6e505d732f1e48abbd7d3c4ba4cfc34c',
     content: `<script>
   import { fade } from "svelte/transition";
-  export let condition;
+  let condition;
 </script>
 {#if condition}
   <div transition:fade={{ delay: 250, duration: 300 }}>
     fades in  and out
   </div>
 {/if}
-// Other transitions
+<-- Other transitions
+
 [Blur, Scale, Fly, Draw, Slide]
-`,
+-->`,
   },
   {
     title: 'Reactive Expressions',
