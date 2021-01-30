@@ -131,7 +131,7 @@ export const cheatSheet = [
   },
   {
     title: 'Conditional Render',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/b023c56cdf0d42819fe7ccc38ea75c41',
     content: `{#if condition}
   <p>Condition is true</p>
 {:else if otherCondition}
