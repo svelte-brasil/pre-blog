@@ -13,7 +13,8 @@
       <div class="info__image">
         <img
           src="/img/logo-svelte-brasil.png"
-          alt="Logo do Svelte mais o mapa do brasil com a bandeira" />
+          alt="Logo do Svelte mais o mapa do brasil com a bandeira"
+        />
       </div>
       <h1 class="info__title">
         <span class="gretting">{$_('welcome')}</span>
@@ -31,7 +32,7 @@
         {/each}
       </ul>
       <div class="learning">
-        <a href="#/cheat">
+        <a href="#/cheatsheet">
           <img src="/img/icons/open-book.svg" alt="aprenda" />
           <span>{$_('cheat_sheet')}</span>
         </a>
@@ -40,7 +41,8 @@
     <div class="illustration">
       <img
         src="/img/illustration-hero.svg"
-        alt="ilustração de um homem em pé com jaqueta laranja na esquerda, um quadrado simulando um browser dark mode no centro e um arbuste a direita semelhante a uma folha na cor laranja" />
+        alt="ilustração de um homem em pé com jaqueta laranja na esquerda, um quadrado simulando um browser dark mode no centro e um arbuste a direita semelhante a uma folha na cor laranja"
+      />
     </div>
   </div>
 </main>

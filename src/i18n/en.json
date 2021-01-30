@@ -27,5 +27,8 @@
   "re_render": "Rerender when the value change",
   "svelte_component": "Svelte Component",
   "learn": "Learn with us",
-  "match_class": "When the property name is the same as the class name"
+  "match_class": "When the property name is the same as the class name",
+  "repl": "See in REPL",
+  "doc": "Go to documentation",
+  "use_action": "Use action"
 }

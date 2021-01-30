@@ -5,10 +5,10 @@
 
   console.log(location.pathname)
 
-  let component = location.href.includes('cheat') ? CheatSheet : Home
+  let component = location.href.includes('cheatsheet') ? CheatSheet : Home
 
   window.addEventListener('popstate', function (event) {
-    component = location.href.includes('cheat') ? CheatSheet : Home
+    component = location.href.includes('cheatsheet') ? CheatSheet : Home
   })
 </script>
 
