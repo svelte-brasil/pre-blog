@@ -1,8 +1,6 @@
 <script>
   import Card from '@src/container/Card.svelte'
   import { cheatSheet } from '@src/data/cheat-sheet'
-  import { HighlightSvelte } from 'svelte-highlight'
-  import 'svelte-highlight/styles/github.css'
   import { _ } from 'svelte-i18n'
 </script>
 
@@ -15,9 +13,7 @@
 
 <section class="container">
   {#each cheatSheet as item}
-    <Card title={$_(item.title)} href={item.repl}>
-      <HighlightSvelte code={item.content.replace(/::/g, '//')} />
-    </Card>
+    <Card {...item} />
   {/each}
 </section>
 

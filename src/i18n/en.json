@@ -29,5 +29,6 @@
   "learn": "Learn with us",
   "match_class": "When the property name is the same as the class name",
   "repl": "See in REPL",
-  "doc": "Go to documentation"
+  "doc": "Go to documentation",
+  "use_action": "Use action"
 }

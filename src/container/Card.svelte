@@ -1,25 +1,30 @@
 <script>
+  import { HighlightSvelte } from 'svelte-highlight'
+  import 'svelte-highlight/styles/github.css'
   import { _ } from 'svelte-i18n'
 
   export let title = ''
   export let repl = ''
   export let doc = ''
+  export let content = ''
 </script>
 
 <section class="card">
   <header>
     <h2>
-      {title}
+      {$_(title)}
     </h2>
     <span class="circles" />
   </header>
-  <div>
-    <slot>Content</slot>
-  </div>
-  <footer>
-    <a href={doc} target="_blank" title={$_('doc')}>📃</a>
+  <section>
+    {#if doc}
+      <a href={doc} target="_blank" title={$_('doc')}>📃</a>
+    {/if}
     <a href={repl} target="_blank" title={$_('repl')}>💻</a>
-  </footer>
+  </section>
+  <div class="content">
+    <HighlightSvelte code={content} />
+  </div>
 </section>
 
 <style>
@@ -63,22 +68,22 @@
     margin-right: 50px;
   }
 
-  .card > div {
+  .card > section {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 10px;
+  }
+
+  section > a {
+    margin-left: 10px;
+    font-size: 1.25rem;
+  }
+
+  .card > .content {
     padding: var(--m10);
     height: calc(100% - 48px);
     overflow-x: auto;
     flex: 1;
-  }
-
-  .card > footer {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-  }
-
-  footer > a {
-    margin-left: 10px;
-    font-size: 1.25rem;
   }
 
   @media (max-width: 484px) {
