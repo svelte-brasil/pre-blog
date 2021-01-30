@@ -208,7 +208,7 @@ import Widget from './Widget.svelte'
   },
   {
     title: 'Rendering List',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/db8ac032184b455bbeed903ba042937c',
     content: `<ul>
   {#each items as item}
   <li>{item.name} x {item.qty}</li>
