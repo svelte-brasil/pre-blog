@@ -326,16 +326,16 @@ onMount(() => {
   },
   {
     title: 'Animations',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/f2ba3adfe6cf49a58a38540530567354',
     content: `<script>
   import { flip } from "svelte/animate";
   import { quintOut } from "svelte/easing";
   let list = [1, 2, 3];
 </script>
 {#each list as n (n)}
-  <div animate:flip={{ 
-    delay: 250, 
-    duration: 250, 
+  <div animate:flip={{
+    delay: 250,
+    duration: 2000,
     easing: quintOut
   }}>
     {n}
