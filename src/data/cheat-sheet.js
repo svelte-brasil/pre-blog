@@ -159,11 +159,11 @@ export const cheatSheet = [
   },
   {
     title: 'Render HTML',
-    repl: '#',
-    title: "Render HTML",
-    content: `<scrit>
+    repl: 'https://svelte.dev/repl/44896bb6272d48b2a0a5909678b07cc9',
+    content: `<script>
   const myHtml = '<span><strong>My text:</strong> text</span>'
-</scrit>
+</script>
+
 {@html '<div>Content</div>'}
 {@html myHtml}
 `,
