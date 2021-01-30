@@ -287,18 +287,20 @@ import Widget from './Widget.svelte'
   },
   {
     title: 'Class Binding',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/c0c8e997fec1428ba670d4a95829d110',
     content: `<script>
    export let type = 'normal'
    export let active = true
 </script>
-<div class={active ? active : ''}  class={type}>
-...
-</div>
+
+<div class={active ? active : ''}>...</div>
+<div class={type}>...</div>
+
 <div class:active={active} class={\`otherClass \${type}\`}>
 ...
 </div>
-// Match class
+
+<!-- Class Toggle -->
 <div class:active>...</div>
 `,
   },
