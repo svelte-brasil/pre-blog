@@ -1,7 +1,10 @@
+const replPath = 'https://svelte.dev/repl'
+const docPath = 'https://svelte.dev/docs'
+
 export const cheatSheet = [
   {
-    title: 'Svelte Component',
-    repl: 'https://svelte.dev/repl/6a5416148c4b410b8ee0325eef54b107',
+    title: 'svelte_component',
+    repl: `${replPath}/6a5416148c4b410b8ee0325eef54b107`,
     content: `<!-- Widget.svelte -->
 <script>
   export let textValue
@@ -25,8 +28,8 @@ export const cheatSheet = [
 `,
   },
   {
-    title: 'Expressions',
-    repl: 'https://svelte.dev/repl/27bd55a7357046f2911923069dee9d86',
+    title: 'expressions',
+    repl: `${replPath}/27bd55a7357046f2911923069dee9d86`,
     content: `<script>
   let isShowing = true
   let cat = 'cat'
@@ -46,8 +49,8 @@ export const cheatSheet = [
 <p>{\`name \${user.name}\`}</p>`,
   },
   {
-    title: 'Simple Bind',
-    repl: 'https://svelte.dev/repl/505dfd64708844c7b28ead4834059d69',
+    title: 'simple_bind',
+    repl: `${replPath}/505dfd64708844c7b28ead4834059d69`,
     content: `<!-- MyLink.svelte -->
 <script>
     export let href = ''
@@ -77,8 +80,8 @@ export const cheatSheet = [
 `,
   },
   {
-    title: 'Two Way Bind',
-    repl: 'https://svelte.dev/repl/63c1cc2e6ab24d33ae531d6acdabc14e',
+    title: 'two_way_bind',
+    repl: `${replPath}/63c1cc2e6ab24d33ae531d6acdabc14e`,
     content: `<MyInput bind:value={value} />
 // Shorthand
 <MyInput bind:value />
@@ -114,8 +117,8 @@ export const cheatSheet = [
 `,
   },
   {
-    title: 'Use action',
-    repl: 'https://svelte.dev/repl/6262d071414f42e98cdeed1f3c78d93e',
+    title: 'use_action',
+    repl: `${replPath}/6262d071414f42e98cdeed1f3c78d93e`,
     content: `<script>
   function myFunction(node) {
     // the node has been mounted in the DOM
@@ -130,8 +133,8 @@ export const cheatSheet = [
     `,
   },
   {
-    title: 'Conditional Render',
-    repl: 'https://svelte.dev/repl/b023c56cdf0d42819fe7ccc38ea75c41',
+    title: 'conditional_render',
+    repl: `${replPath}/b023c56cdf0d42819fe7ccc38ea75c41`,
     content: `{#if condition}
   <p>Condition is true</p>
 {:else if otherCondition}
@@ -146,8 +149,8 @@ export const cheatSheet = [
 `,
   },
   {
-    title: 'Await Template',
-    repl: 'https://svelte.dev/repl/22a36f1affba4334807a133d985ce6ef',
+    title: 'await_template',
+    repl: `${replPath}/22a36f1affba4334807a133d985ce6ef`,
     content: `{#await promise}
   <p>waiting for the promise to resolve...</p>
 {:then value}
@@ -158,8 +161,8 @@ export const cheatSheet = [
 `,
   },
   {
-    title: 'Render HTML',
-    repl: 'https://svelte.dev/repl/44896bb6272d48b2a0a5909678b07cc9',
+    title: 'render',
+    repl: `${replPath}/44896bb6272d48b2a0a5909678b07cc9`,
     content: `<script>
   const myHtml = '<span><strong>My text:</strong> text</span>'
 </script>
@@ -169,8 +172,8 @@ export const cheatSheet = [
 `,
   },
   {
-    title: 'Handle Events',
-    repl: 'https://svelte.dev/repl/10cfb455b7b84514b35913aabee8b5c3',
+    title: 'handle_vents',
+    repl: `${replPath}/10cfb455b7b84514b35913aabee8b5c3`,
     content: `<button on:click={handleClick}>
   Press me
 </button>
@@ -186,8 +189,8 @@ export const cheatSheet = [
 `,
   },
   {
-    title: 'Forwarding Event',
-    repl: 'https://svelte.dev/repl/f1e3b92d7a3c466bb614aa8f49cde3b1',
+    title: 'forwarding_event',
+    repl: `${replPath}/f1e3b92d7a3c466bb614aa8f49cde3b1`,
     content: `<!-- Widget.svelte -->
 <script>
   import { createEventDispatcher } from "svelte";
@@ -207,8 +210,8 @@ import Widget from './Widget.svelte'
 `,
   },
   {
-    title: 'Rendering List',
-    repl: 'https://svelte.dev/repl/db8ac032184b455bbeed903ba042937c',
+    title: 'rendering_list',
+    repl: `${replPath}/db8ac032184b455bbeed903ba042937c`,
     content: `<ul>
   {#each items as item}
   <li>{item.name} x {item.qty}</li>
@@ -231,8 +234,8 @@ import Widget from './Widget.svelte'
 `,
   },
   {
-    title: 'Using Slot',
-    repl: 'https://svelte.dev/repl/4844ee8feb794ed4bde10508cdb177cf?version=3',
+    title: 'using_slot',
+    repl: `${replPath}/4844ee8feb794ed4bde10508cdb177cf`,
     content: `<!-- Widget.svelte -->
 <div>
   <slot>Default content</slot>
@@ -250,8 +253,8 @@ import Widget from './Widget.svelte'
 `,
   },
   {
-    title: 'Multiple Slot',
-    repl: 'https://svelte.dev/repl/abc6ecc5953c4c77af402185a2219df4',
+    title: 'multiple_slot',
+    repl: `${replPath}/abc6ecc5953c4c77af402185a2219df4`,
     content: `<!-- Widget.svelte -->
 <div>
   <slot name="header">
@@ -286,8 +289,8 @@ import Widget from './Widget.svelte'
 `,
   },
   {
-    title: 'Class Binding',
-    repl: 'https://svelte.dev/repl/c0c8e997fec1428ba670d4a95829d110',
+    title: 'class_binding',
+    repl: `${replPath}/c0c8e997fec1428ba670d4a95829d110`,
     content: `<script>
    export let type = 'normal'
    export let active = true
@@ -305,8 +308,8 @@ import Widget from './Widget.svelte'
 `,
   },
   {
-    title: 'Lifecycle',
-    repl: 'https://svelte.dev/repl/ca959a7e552a4b35aa678dbe9a2d2b48',
+    title: 'lifecycle',
+    repl: `${replPath}/ca959a7e552a4b35aa678dbe9a2d2b48`,
     content: `
 <script>
 import { onMount } from 'svelte'
@@ -325,8 +328,8 @@ onMount(() => {
 -->`,
   },
   {
-    title: 'Animations',
-    repl: 'https://svelte.dev/repl/f2ba3adfe6cf49a58a38540530567354',
+    title: 'animations',
+    repl: `${replPath}/f2ba3adfe6cf49a58a38540530567354`,
     content: `<script>
   import { flip } from "svelte/animate";
   import { quintOut } from "svelte/easing";
@@ -344,8 +347,8 @@ onMount(() => {
 `,
   },
   {
-    title: 'Transitions',
-    repl: 'https://svelte.dev/repl/6e505d732f1e48abbd7d3c4ba4cfc34c',
+    title: 'transitions',
+    repl: `${replPath}/6e505d732f1e48abbd7d3c4ba4cfc34c`,
     content: `<script>
   import { fade } from "svelte/transition";
   let condition;
@@ -361,8 +364,8 @@ onMount(() => {
 -->`,
   },
   {
-    title: 'Reactive Expressions',
-    repl: 'https://svelte.dev/repl/0f7793bf7b0745f1b356327fad4a71e1',
+    title: 'reactive_expressions',
+    repl: `${replPath}/0f7793bf7b0745f1b356327fad4a71e1`,
     content: `<script>
   let num = 0
   $: squared = num * num
@@ -376,8 +379,8 @@ onMount(() => {
 `,
   },
   {
-    title: 'Reactive Statement',
-    repl: 'https://svelte.dev/repl/b959727e045e4eb7b70c7f16e425fed5',
+    title: 'reactive_statement',
+    repl: `${replPath}/b959727e045e4eb7b70c7f16e425fed5`,
     content: `<script>
   $: if (count >= 10) {
     alert('count is dangerously high!')
