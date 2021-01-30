@@ -29,6 +29,7 @@
     width: 100vw;
     background-color: #fff;
     height: 100px;
+    z-index: 999;
   }
 
   header > .logo {
