@@ -15,7 +15,7 @@
 
 <section class="container">
   {#each cheatSheet as item}
-    <Card title={$_(item.title)} repl={item.repl}>
+    <Card title={$_(item.title)} href={item.repl}>
       <HighlightSvelte code={item.content.replace(/::/g, '//')} />
     </Card>
   {/each}

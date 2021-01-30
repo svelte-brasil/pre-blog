@@ -1,27 +1,35 @@
 <script>
+  import { _ } from 'svelte-i18n'
+
   export let title = ''
   export let repl = ''
+  export let doc = ''
 </script>
 
 <section class="card">
   <header>
-    <h2>{title}</h2>
-    <div class="circles">
-      <a href={repl} class="circle red" title="código no REPL" target="_blank"
-        ><span /></a
-      >
-      <span class="circle yellow" />
-      <span class="circle green" />
-    </div>
+    <h2>
+      {title}
+    </h2>
+    <span class="circles" />
   </header>
   <div>
     <slot>Content</slot>
   </div>
+  <footer>
+    <a href={doc} target="_blank" title={$_('doc')}>📃</a>
+    <a href={repl} target="_blank" title={$_('repl')}>💻</a>
+  </footer>
 </section>
 
 <style>
   .card {
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: var(--m1) solid var(--primary-color);
+    border-radius: 10px;
   }
 
   .card > header {
@@ -33,46 +41,44 @@
     justify-content: space-between;
     align-items: center;
     height: 48px;
+    position: relative;
+    border-radius: 10px 10px 0 0;
   }
 
   header > h2 {
+    display: flex;
+    align-items: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
-
   header > .circles {
-    height: var(--m18);
-  }
-
-  .circle {
-    display: inline-block;
+    display: block;
     width: var(--m18);
     height: var(--m18);
     border-radius: 50%;
     background-color: var(--red-color);
     border: 1px solid #fff;
-    margin: 0 0 0 5px;
-    content: '\f30c';
-    text-decoration: none;
-  }
-  .red {
-    background-color: var(--red-color);
-  }
-
-  .yellow {
-    background-color: var(--yellow-color);
-  }
-
-  .green {
-    background-color: var(--green-color);
+    box-shadow: 25px 0 0 0 var(--yellow-color), 50px 0 0 0 var(--green-color);
+    margin-right: 50px;
   }
 
   .card > div {
-    border: var(--m1) solid var(--primary-color);
     padding: var(--m10);
     height: calc(100% - 48px);
     overflow-x: auto;
+    flex: 1;
+  }
+
+  .card > footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+
+  footer > a {
+    margin-left: 10px;
+    font-size: 1.25rem;
   }
 
   @media (max-width: 484px) {
