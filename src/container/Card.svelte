@@ -1,18 +1,22 @@
 <script>
-  import { HighlightSvelte } from 'svelte-highlight'
   import 'svelte-highlight/styles/github.css'
   import { _ } from 'svelte-i18n'
+  import { fly } from 'svelte/transition'
+  import { HighlightSvelte } from 'svelte-highlight'
 
   export let title = ''
   export let repl = ''
   export let doc = ''
   export let content = ''
 
+  let isCopied = false
+
   function copy() {
     const element = document.getElementById(title).firstChild
     if (navigator.clipboard) {
       navigator.clipboard.writeText(element.innerText)
-      alert($_('copied_clipboard'))
+      isCopied = true
+      setTimeout(() => (isCopied = false), 3000)
     }
   }
 </script>
@@ -24,11 +28,14 @@
     </h2>
     <span class="circles" />
   </header>
-  <section>
-    {#if navigator.clipboard}
-      <a href on:click|preventDefault={copy} title={$_('copy_clipboard')}>📋</a>
+  <section class="links">
+    {#if isCopied}
+      <span transition:fly={{ x: 20 }}>
+        {$_('copied_clipboard')}
+      </span>
     {/if}
 
+    <a href on:click|preventDefault={copy} title={$_('copy_clipboard')}>📋</a>
     <a href={doc} target="_blank" title={$_('doc')}>📃</a>
     <a href={repl} target="_blank" title={$_('repl')}>💻</a>
   </section>
@@ -78,15 +85,17 @@
     margin-right: 50px;
   }
 
-  .card > section {
+  .card > .links {
     display: flex;
     justify-content: flex-end;
-    padding: 5px 10px;
+    align-items: center;
+    padding: 10px;
+    color: var(--red-color);
   }
-
-  section > a {
-    margin-left: 10px;
+  .links a {
+    margin-left: 20px;
     font-size: 1.25rem;
+    text-decoration: none;
   }
 
   .card > .content {
