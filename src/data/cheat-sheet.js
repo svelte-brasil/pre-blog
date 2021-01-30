@@ -233,7 +233,7 @@ import Widget from './Widget.svelte'
   },
   {
     title: 'Using Slot',
-    repl: `${path}/4844ee8feb794ed4bde10508cdb177cf?version=3`,
+    repl: `${path}/4844ee8feb794ed4bde10508cdb177cf`,
     content: `<!-- Widget.svelte -->
 <div>
   <slot>Default content</slot>
