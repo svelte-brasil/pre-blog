@@ -47,9 +47,8 @@ export const cheatSheet = [
   },
   {
     title: 'Simple Bind',
-    repl: '#',
-    title: "Simple Bind",
-    content: `//MyLink.svelte
+    repl: 'https://svelte.dev/repl/505dfd64708844c7b28ead4834059d69',
+    content: `<!-- MyLink.svelte -->
 <script>
     export let href = ''
     export let title = ''
@@ -58,16 +57,19 @@ export const cheatSheet = [
 <a href={href} style={\`color: \${color}\`} >
   {title}
 </a>
-// Shorthand
+
+<!-- Shorthand
 <a {href} style={\`color: \${color}\`} >
   {title}
-</a>
+</a> -->
+
+<!-- App.svelte -->
 <script>
   import MyLink from "./components/MyLink";
   let link = {
     href: "http://www.mysite.com",
     title: "My Site",
-    repl: '#',
+    repl: "#",
     color: "#ff3300"
   };
 </script>
