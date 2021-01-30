@@ -172,7 +172,7 @@ export const cheatSheet = [
 `,
   },
   {
-    title: 'handle_vents',
+    title: 'handle_events',
     repl: `${replPath}/10cfb455b7b84514b35913aabee8b5c3`,
     content: `<button on:click={handleClick}>
   Press me
