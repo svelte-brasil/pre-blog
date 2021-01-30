@@ -147,7 +147,7 @@ export const cheatSheet = [
   },
   {
     title: 'Await Template',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/22a36f1affba4334807a133d985ce6ef',
     content: `{#await promise}
   <p>waiting for the promise to resolve...</p>
 {:then value}
