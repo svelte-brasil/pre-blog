@@ -362,7 +362,7 @@ onMount(() => {
   },
   {
     title: 'Reactive Expressions',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/0f7793bf7b0745f1b356327fad4a71e1',
     content: `<script>
   let num = 0
   $: squared = num * num
@@ -371,8 +371,8 @@ onMount(() => {
 <button on:click={() => num = num + 1}>
   Increment: {num}
 </button>
-<p>{squared}</p>
-<p>{cubed}</p>
+<p>{num}<sup>2</sup> = {squared}</p>
+<p>{num}<sup>3</sup> = {cubed}</p>
 `,
   },
   {
