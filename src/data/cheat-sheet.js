@@ -306,22 +306,23 @@ import Widget from './Widget.svelte'
   },
   {
     title: 'Lifecycle',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/ca959a7e552a4b35aa678dbe9a2d2b48',
     content: `
 <script>
-import onMount from 'svelte'
+import { onMount } from 'svelte'
 onMount(() => {
   console.log('Mounting')
-  return () => (consolo.log('going out'))
+  return () => (console.log('going out'))
 })
 </script>
-// Other lifecycle functions
-[
+<!--
+	Other lifecycle functions
+
   onMount(() => {}),
   beforeUpdate(() => {}),
   afterUpdate(() => {}),
   onDestroy(() => {})
-]`,
+-->`,
   },
   {
     title: 'Animations',
