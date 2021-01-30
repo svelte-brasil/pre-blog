@@ -115,7 +115,7 @@ export const cheatSheet = [
   },
   {
     title: 'Use action',
-    repl: '#',
+    repl: 'https://svelte.dev/repl/6262d071414f42e98cdeed1f3c78d93e',
     content: `<script>
   function myFunction(node) {
     // the node has been mounted in the DOM
