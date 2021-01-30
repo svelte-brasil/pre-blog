@@ -232,17 +232,20 @@ import Widget from './Widget.svelte'
   },
   {
     title: 'Using Slot',
-    repl: '#',
-    title: "Using Slot",
-    content:
-      `<!-- Widget.svelte -->
+    repl: 'https://svelte.dev/repl/4844ee8feb794ed4bde10508cdb177cf?version=3',
+    content: `<!-- Widget.svelte -->
 <div>
   <slot>Default content</slot>
 </div>
+
 <!-- App.svelte -->
+<script>
+	import Widget from "./Widget.svelte"
+</script>
+
 <Widget />
 <Widget>
-  <p>I   changed the default content</p>
+  <p>I changed the default content</p>
 </Widget>
 `,
   },
