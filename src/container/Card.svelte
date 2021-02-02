@@ -50,7 +50,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: var(--m1) solid var(--primary-color);
+    border: var(--m1) solid var(--blue-color);
     border-radius: 10px;
   }
 
