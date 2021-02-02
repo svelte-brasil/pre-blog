@@ -55,7 +55,7 @@
   }
 
   .card > header {
-    background-color: var(--primary-color);
+    background-color: var(--blue-color);
     padding: var(--m10);
     color: #ffffff;
     font-weight: bold;
