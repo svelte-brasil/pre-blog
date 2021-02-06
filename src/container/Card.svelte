@@ -50,12 +50,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: var(--m1) solid var(--blue-color);
+    border: var(--m1) solid var(--main-color);
     border-radius: 10px;
   }
 
   .card > header {
-    background-color: var(--blue-color);
+    background-color: var(--main-color);
     padding: var(--m10);
     color: #ffffff;
     font-weight: bold;
