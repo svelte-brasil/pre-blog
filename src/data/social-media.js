@@ -23,10 +23,5 @@ export const socials = [
     label: 'youtube',
     link: 'https://www.youtube.com/channel/UCp8jamqJRGg86eMnewxjWng',
     iconPath: '/img/icons/youtube.svg',
-  },
-  {
-    label: 'slack',
-    link: 'http://bit.ly/svelte-brasil-slack',
-    iconPath: '/img/icons/slack.svg',
-  },
+  }
 ]
