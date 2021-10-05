@@ -32,5 +32,6 @@
   "doc": "Ir para documentação",
   "use_action": "Ação do usuário",
   "copy_clipboard": "Copiar para a área de transferência",
-  "copied_clipboard": "Copiado para a área de transferência"
+  "copied_clipboard": "Copiado para a área de transferência",
+  "dynamic_component": "Componente dinâmico"
 }
