@@ -32,5 +32,6 @@
   "doc": "Go to documentation",
   "use_action": "Use action",
   "copy_clipboard": "Copy to clipboard",
-  "copied_clipboard": "Copied to clipboard"
+  "copied_clipboard": "Copied to clipboard",
+  "dynamic_component": "Dynamic component"
 }
