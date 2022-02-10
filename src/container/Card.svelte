@@ -1,8 +1,8 @@
 <script>
-  import 'svelte-highlight/styles/github.css'
-  import { _ } from 'svelte-i18n'
-  import { fly } from 'svelte/transition'
-  import { HighlightSvelte } from 'svelte-highlight'
+import HighlightSvelte from 'svelte-highlight'
+import 'svelte-highlight/styles/github.css'
+import { _ } from 'svelte-i18n'
+import { fly } from 'svelte/transition'
 
   export let title = ''
   export let repl = ''
