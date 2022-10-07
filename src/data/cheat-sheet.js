@@ -462,13 +462,31 @@ onMount(() => {
 		repl: `${replPath}/cb8adc064eb246de9030b3b1cbc357cb?`,
 		doc: `${docPath}#template-syntax-element-directives-style-property`,
 		content: `<!-- These are equivalent -->
-<div style:color="red">...</div>
-<div style="color: red;">...</div>
+<script>
+	let myColor = 'black'
+	let color = 'blue'
+	let darkMode = true
+</script>
+<div style:color="red">
+  content
+</div>
+<div style="color: red;">
+  content
+</div>
 <!-- Variables can be used -->
-<div style:color={myColor}>...</div>
+<div style:color={myColor}>
+  content
+</div>
 <!-- Shorthand, for when property and variable name match -->
-<div style:color>...</div>
+<div style:color>
+  content
+</div>
 <!-- Multiple styles can be included -->
-<div style:color style:width="12rem" style:background-color={darkMode ? "black" : "white"}>...</div>`
+<div 
+  style:color 
+  style:width="12rem" 
+  style:background-color={darkMode ? "black" : "white"}>
+...
+</div>`
 	}
 ]
