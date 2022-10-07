@@ -33,5 +33,6 @@
   "use_action": "Use action",
   "copy_clipboard": "Copy to clipboard",
   "copied_clipboard": "Copied to clipboard",
-  "dynamic_component": "Change component dynamically"
+  "dynamic_component": "Change component dynamically",
+  "changing_style": "Changing style properties"
 }
